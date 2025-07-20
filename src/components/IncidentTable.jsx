@@ -1,5 +1,12 @@
 export default function IncidentTable({ incidents }) {
-  if (incidents.length === 0) return <p className="text-black">No incidents logged.</p>;
+  if (incidents.length === 0) {
+  return (
+    <div className="bg-gray-100  text-black text-sm font-medium px-6 py-3 rounded-full text-center w-full max-w-md mx-auto shadow">
+      No incidents logged.
+    </div>
+  );
+}
+
 
   return (
     <div className="overflow-x-auto shadow border rounded-lg">

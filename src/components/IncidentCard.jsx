@@ -1,5 +1,12 @@
 export default function IncidentCard({ incidents }) {
-  if (incidents.length === 0) return <p className="text-gray-500">No incidents logged.</p>;
+  if (incidents.length === 0) {
+  return (
+    <div className="bg-yellow-100 text-yellow-800 text-sm font-medium px-6 py-3 rounded-full text-center w-full max-w-md mx-auto shadow">
+      No incidents logged.
+    </div>
+  );
+}
+
 
   return (
     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
