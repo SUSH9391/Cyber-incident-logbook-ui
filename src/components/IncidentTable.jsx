@@ -1,7 +1,7 @@
 export default function IncidentTable({ incidents }) {
   if (incidents.length === 0) {
   return (
-    <div className="bg-gray-100  text-black text-sm font-medium px-6 py-3 rounded-full text-center w-full max-w-md mx-auto shadow">
+    <div className="bg-gray-100  text-black text-sm font-medium px-6 py-3 rounded-full text-center w-full max-w-md mx-auto shadow" id="Logs">
       No incidents logged.
     </div>
   );

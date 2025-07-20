@@ -1,7 +1,7 @@
 export default function IncidentCard({ incidents }) {
   if (incidents.length === 0) {
   return (
-    <div className="bg-yellow-100 text-yellow-800 text-sm font-medium px-6 py-3 rounded-full text-center w-full max-w-md mx-auto shadow">
+    <div className="bg-yellow-100 text-yellow-800 text-sm font-medium px-6 py-3 rounded-full text-center w-full max-w-md mx-auto shadow" id="Logs">
       No incidents logged.
     </div>
   );
