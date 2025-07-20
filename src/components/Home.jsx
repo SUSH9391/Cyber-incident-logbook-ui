@@ -38,50 +38,49 @@ export default function Home() {
 
   return (
     <div
-  className="relative min-h-screen bg-cover bg-center bg-no-repeat px-4 sm:px-6 lg:px-10 py-6"
- style={{ backgroundImage: "url('/background-home.jpg')", filter: 'brightness(-10.4)' }} id="Home"
+      className="relative min-h-screen flex flex-col bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: "url('/background-home.jpg')" }} id="Home"
+    >
+      <div className="relative z-10 max-w-7xl mx-auto w-full space-y-6">
+        <IncidentForm onAdd={addIncident} />
 
->
-    <div className="relative z-10 max-w-7xl mx-auto w-full space-y-6">
-      <IncidentForm onAdd={addIncident} />
+        {/* Export + Filter */}
+        <div className="flex flex-wrap justify-between items-center gap-4 my-4">
+          <button
+            onClick={handleDownload}
+            className="bg-blue-500 hover:bg-blue-800 text-white px-4 py-2 rounded shadow"
+          >
+            Download CSV
+          </button>
 
-      {/* Export + Filter */}
-      <div className="flex flex-wrap justify-between items-center gap-4 my-4">
-        <button
-          onClick={handleDownload}
-          className="bg-blue-500 hover:bg-blue-800 text-white px-4 py-2 rounded shadow"
-        >
-          Download CSV
-        </button>
+          <FilterBar statusFilter={statusFilter} setStatusFilter={setStatusFilter} />
+        </div>
 
-        <FilterBar statusFilter={statusFilter} setStatusFilter={setStatusFilter} />
-      </div>
+        {/* Toggle Views */}
+        <div className="flex justify-end gap-2 mb-4">
+          <button
+            onClick={() => setViewMode("table")}
+            className={`px-3 py-1 rounded ${
+              viewMode === "table" ? "bg-blue-500 text-white" : "bg-gray-200"
+            }`}
+          >
+            Table
+          </button>
+          <button
+            onClick={() => setViewMode("card")}
+            className={`px-3 py-1 rounded ${
+              viewMode === "card" ? "bg-blue-500 text-white" : "bg-gray-200"
+            }`}
+          >
+            Card
+          </button>
+        </div>
 
-      {/* Toggle Views */}
-      <div className="flex justify-end gap-2 mb-4">
-        <button
-          onClick={() => setViewMode("table")}
-          className={`px-3 py-1 rounded ${
-            viewMode === "table" ? "bg-blue-500 text-white" : "bg-gray-200"
-          }`}
-        >
-          Table
-        </button>
-        <button
-          onClick={() => setViewMode("card")}
-          className={`px-3 py-1 rounded ${
-            viewMode === "card" ? "bg-blue-500 text-white" : "bg-gray-200"
-          }`}
-        >
-          Card
-        </button>
-      </div>
-
-      {viewMode === "table" ? (
-        <IncidentTable incidents={filteredIncidents} />
-      ) : (
-        <IncidentCard incidents={filteredIncidents} />
-      )}
+        {viewMode === "table" ? (
+          <IncidentTable incidents={filteredIncidents} />
+        ) : (
+          <IncidentCard incidents={filteredIncidents} />
+        )}
       </div>
     </div>
   );
