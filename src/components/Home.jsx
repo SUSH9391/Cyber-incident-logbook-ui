@@ -39,7 +39,8 @@ export default function Home() {
   return (
     <div
   className="relative min-h-screen bg-cover bg-center bg-no-repeat px-4 sm:px-6 lg:px-10 py-6"
-  style={{ backgroundImage: "url('/background-home.jpg')" }}
+ style={{ backgroundImage: "url('/background-home.jpg')", filter: 'brightness(-10.4)' }}
+
 >
     <div className="relative z-10 max-w-7xl mx-auto w-full space-y-6">
       <IncidentForm onAdd={addIncident} />
