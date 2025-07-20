@@ -3,6 +3,7 @@ import IncidentForm from "./IncidentForm";
 import FilterBar from "./FilterBar";
 import IncidentTable from "./IncidentTable";
 import IncidentCard from "./IncidentCard";
+import Footer from "./Footer";
 
 export default function Home() {
   const [incidents, setIncidents] = useState([]);
@@ -38,10 +39,10 @@ export default function Home() {
 
   return (
     <div
-      className="relative min-h-screen flex flex-col bg-cover bg-center bg-no-repeat"
+      className="relative min-h-screen  flex flex-col bg-cover bg-center bg-no-repeat"
       style={{ backgroundImage: "url('/background-home.jpg')" }} id="Home"
     >
-      <div className="relative z-10 max-w-7xl mx-auto w-full space-y-6">
+      <div className="relative px-6 z-10 max-w-7xl mx-auto w-full space-y-6">
         <IncidentForm onAdd={addIncident} />
 
         {/* Export + Filter */}
@@ -81,7 +82,9 @@ export default function Home() {
         ) : (
           <IncidentCard incidents={filteredIncidents} />
         )}
+       
       </div>
+       <Footer />
     </div>
   );
 }
