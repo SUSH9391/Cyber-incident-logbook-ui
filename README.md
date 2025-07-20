@@ -12,5 +12,15 @@ This is a responsive frontend-only React application to simulate a cyber inciden
 
 1. **Clone the repo**
    ```bash
-   git clone https://github.com/your-username/cyber-incident-logbook-ui.git
+   git clone https://github.com/SUSH9391/cyber-incident-logbook-ui.git
    cd cyber-incident-logbook-ui
+   now move to cyber-logbook folder also known as client folder
+   cd cyber-logbook
+   ```
+2. **Install dependencies**
+    ```bash
+      npm install
+    ```
+3. **Run the app**
+     npm run dev
+4. Open your browser at http://localhost:5173/
