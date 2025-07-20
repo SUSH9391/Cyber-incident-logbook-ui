@@ -35,4 +35,6 @@ This is a responsive frontend-only React application to simulate a cyber inciden
     import tailwindcss from 'tailwindcss';''
 
 7. **Add Tailwind to index.css file**
+    ```css
+     /* src/index.css */
      @import "tailwindcss";
